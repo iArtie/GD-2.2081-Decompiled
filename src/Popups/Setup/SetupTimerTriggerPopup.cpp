@@ -1,0 +1,19 @@
+#include "Popups/Setup/SetupTimerTriggerPopup.h"
+#include "Popups/Setup/SetupTriggerPopup.h"
+#include "Objects/TimerTriggerGameObject.h"
+
+SetupTimerTriggerPopup* SetupTimerTriggerPopup::create(TimerTriggerGameObject* object, cocos2d::CCArray* objects)
+{
+    SetupTimerTriggerPopup* instance = new SetupTimerTriggerPopup();
+    if (instance->init(object, objects))
+    {
+        instance->autorelease();
+        return instance;
+    }
+    delete instance;
+    return nullptr;
+}
+
+SetupTimerTriggerPopup::~SetupTimerTriggerPopup()
+{
+}
